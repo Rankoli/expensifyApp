@@ -18,6 +18,7 @@ module.exports = (env) => {
   //const CSSExtract = new ExtractTextPlugin('styles.css'); also works with webpack v3
   const CSSExtract = new MiniCssExtractPlugin({ filename: 'styles.css' });
   return {
+    mode: env,
     entry: './src/app.js',
     output: {
       path: path.join(__dirname, 'public', 'dist'),

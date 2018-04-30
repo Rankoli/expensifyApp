@@ -34,3 +34,26 @@ import database from '../firebase/firebase';
    id,
    updates
   });
+
+  //SET_EXPENSES
+  export const setExpenses = (expenses) => ({
+    type: 'SET_EXPENSES',
+    expenses
+  });
+
+  export const startSetExpenses = () => {
+    return (dispatch) => {
+    //fetching expenses from database and parse them to array
+     return database.ref('expenses').once('value').then((snapshot) => {
+        const expenses = [];
+        snapshot.forEach( (childSnapshot) => {
+          expenses.push({
+           id: childSnapshot.key,
+           ...childSnapshot.val()
+         });
+        });
+
+        dispatch(setExpenses(expenses));
+      });
+    };
+  };
