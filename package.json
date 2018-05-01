@@ -13,6 +13,7 @@
     "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^22.4.3",
@@ -24,6 +25,7 @@
     "css-loader": "0.28.11",
     "express": "^4.16.3",
     "firebase": "^4.13.1",
+    "history": "^4.7.2",
     "mini-css-extract-plugin": "^0.4.0",
     "moment": "^2.22.1",
     "node-sass": "4.8.3",

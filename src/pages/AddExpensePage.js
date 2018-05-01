@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from '../components/ExpenseForm';
-import { startAddExpense } from '../actions/expenses';
+import { startAddExpense, tryingToConnectDatabase } from '../actions/expenses';
 
 export class AddExpensePage extends React.Component {
 
@@ -9,6 +9,11 @@ export class AddExpensePage extends React.Component {
     this.props.startAddExpense(expense);
     this.props.history.push('/');
   };
+
+  test = () => {
+    this.props.tryingToConnectDatabase();
+  }
+
   render() {
     return (
       <div>
@@ -16,13 +21,15 @@ export class AddExpensePage extends React.Component {
         <ExpenseForm
           onSubmit={this.onSubmit}
         />
+        <button onClick={this.test}></button>
       </div>
     );
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  startAddExpense: (expense) => dispatch(startAddExpense(expense))
+  startAddExpense: (expense) => dispatch(startAddExpense(expense)),
+  tryingToConnectDatabase: () => dispatch(tryingToConnectDatabase())
 });
 
 export default connect(undefined, mapDispatchToProps)(AddExpensePage);

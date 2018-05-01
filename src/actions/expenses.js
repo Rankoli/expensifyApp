@@ -1,5 +1,6 @@
 import uuid from 'uuid';
 import database from '../firebase/firebase';
+import axios from 'axios';
 
 // ADD_EXPENSE
  export const addExpense = (expense) => ({
@@ -22,6 +23,19 @@ import database from '../firebase/firebase';
       });
     };
   };
+
+  // export const testReducer = () => ({
+  //   type: 'TEST_T'
+  // });
+
+  // export const tryingToConnectDatabase = () => {
+  //   return (dispatch) => {
+  //       return axios.post("http://localhost:52558/WS.asmx/Login",{email: 'rankoli3@gmail.com',pass: '123456'}).then((Response) => {
+  //         dispatch(testReducer());
+  //         console.log(Response.data);
+  //       });
+  //   };
+  // };
 
   // REMOVE_EXPENSE
  export  const removeExpense = ({id} = {}) => ({
@@ -69,7 +83,6 @@ import database from '../firebase/firebase';
            ...childSnapshot.val()
          });
         });
-
         dispatch(setExpenses(expenses));
       });
     };
