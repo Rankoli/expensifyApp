@@ -2,8 +2,8 @@
 
 exports[`should run Expense Dashboard page 1`] = `
 <div>
-  <Connect(ExpenseList) />
-  <Connect(ExpensesSumary) />
+  <Connect(ExpensesSummary) />
   <Connect(ExpenseListFilters) />
+  <Connect(ExpenseList) />
 </div>
 `;

@@ -5,11 +5,11 @@ import ExpensesSumary from '../components/ExpensesSumary';
 
 const ExpenseDashboardPage = () => (
   <div>
-   <ExpenseList />
-   <ExpensesSumary />
-   <ExpenseListFilters />
+    <ExpensesSumary/>
+    <ExpenseListFilters/>
+    <ExpenseList/>
+
   </div>
 );
-
 
 export default ExpenseDashboardPage;

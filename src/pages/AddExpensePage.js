@@ -13,18 +13,21 @@ export class AddExpensePage extends React.Component {
   test = () => {
     this.props.tryingToConnectDatabase();
   }
-
-  render() {
-    return (
-      <div>
-        <h1>Add Expense</h1>
-        <ExpenseForm
-          onSubmit={this.onSubmit}
-        />
-        <button onClick={this.test}></button>
+//<button onClick={this.test}></button>
+render() {
+  return (
+    <div>
+      <div className="page-header">
+        <div className="content-container">
+          <h1 className="page-header__title">Add Expense</h1>
+        </div>
       </div>
-    );
-  }
+      <div className="content-container">
+        <ExpenseForm onSubmit={this.onSubmit}/>
+      </div>
+    </div>
+  );
+}
 }
 
 const mapDispatchToProps = (dispatch) => ({

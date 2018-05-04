@@ -1,0 +1,13 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    > * { //select all childrend inside form
+        margin-bottom: $m-size;
+    }
+}
+
+.form__error {
+    margin: 0 0 $m-size 0;  //top right bottom left
+    font-style: italic;
+
+}
